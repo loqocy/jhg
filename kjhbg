@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+public class GreaterThanPrevious
+{
+    public static void Main(string[] args)
+    {
+        // Ввод количества элементов
+        Console.WriteLine("Введите количество элементов:");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        // Ввод элементов массива
+        Console.WriteLine("Введите элементы массива:");
+        int[] arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+        // Вывод элементов, больших предыдущего
+        Console.WriteLine("Элементы, большие предыдущего:");
+        for (int i = 1; i < n; i++)
+        {
+            if (arr[i] > arr[i - 1])
+            {
+                Console.Write(arr[i] + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+}
